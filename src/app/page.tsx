@@ -93,67 +93,56 @@ function ServiceTimesSection() {
       <div className="max-w-5xl mx-auto">
         <ScrollReveal>
           <p className="text-xs tracking-[4px] text-zinc-400 mb-10">
-            JOIN US THIS WEEK
+            JOIN US
           </p>
         </ScrollReveal>
         <ScrollReveal stagger>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-            <div className="animate-on-scroll bg-white rounded-2xl p-8 sm:p-10 border border-zinc-100 group hover:border-brand-orange/20 transition-colors">
-              <p className="text-xs tracking-[3px] text-zinc-400 mb-4">
-                SUNDAY WORSHIP
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            <div className="animate-on-scroll bg-white rounded-2xl p-6 border border-zinc-100 group hover:border-brand-orange/20 transition-colors">
+              <span className="text-xs tracking-[2px] text-brand-orange font-medium">WORD</span>
+              <h3 className="text-base font-medium text-zinc-900 mt-2">Morning devotion</h3>
+              <p className="font-display text-3xl font-medium text-zinc-900 tracking-tight mt-2">
+                10 <span className="text-lg text-zinc-300">AM</span>
               </p>
-              <p className="font-display text-5xl sm:text-6xl font-medium text-zinc-900 tracking-tight">
-                3 <span className="text-2xl text-zinc-300">PM</span>
-              </p>
-              <p className="text-sm text-zinc-500 mt-4 leading-relaxed">
-                Main service with worship, Word, and prayer.
-                <br />
-                Everyone is welcome.
-              </p>
-              <Link
-                href="/worship"
-                className="inline-flex items-center gap-1.5 text-sm font-medium text-brand-orange mt-6 hover:underline"
-              >
-                Learn more
-                <svg
-                  className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth={2}
-                  viewBox="0 0 24 24"
-                >
-                  <path d="M5 12h14M12 5l7 7-7 7" />
-                </svg>
-              </Link>
+              <p className="text-xs text-zinc-400 mt-1">Daily</p>
             </div>
-            <div className="animate-on-scroll bg-white rounded-2xl p-8 sm:p-10 border border-zinc-100 group hover:border-brand-teal/20 transition-colors">
-              <p className="text-xs tracking-[3px] text-zinc-400 mb-4">
-                FRIDAY SERVICE
+            <div className="animate-on-scroll bg-white rounded-2xl p-6 border border-zinc-100 group hover:border-brand-orange/20 transition-colors">
+              <span className="text-xs tracking-[2px] text-brand-orange font-medium">WORD</span>
+              <h3 className="text-base font-medium text-zinc-900 mt-2">Sunday worship</h3>
+              <p className="font-display text-3xl font-medium text-zinc-900 tracking-tight mt-2">
+                3 <span className="text-lg text-zinc-300">PM</span>
               </p>
-              <p className="font-display text-5xl sm:text-6xl font-medium text-zinc-900 tracking-tight">
-                7 <span className="text-2xl text-zinc-300">PM</span>
-              </p>
-              <p className="text-sm text-zinc-500 mt-4 leading-relaxed">
-                Bible study, fellowship, and deeper connection.
-                <br />
-                Come grow with us.
-              </p>
-              <Link
-                href="/worship"
-                className="inline-flex items-center gap-1.5 text-sm font-medium text-brand-teal mt-6 hover:underline"
-              >
-                Learn more
-                <svg
-                  className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth={2}
-                  viewBox="0 0 24 24"
-                >
-                  <path d="M5 12h14M12 5l7 7-7 7" />
-                </svg>
-              </Link>
+              <p className="text-xs text-zinc-400 mt-1">Every Sunday</p>
             </div>
+            <div className="animate-on-scroll bg-white rounded-2xl p-6 border border-zinc-100 group hover:border-brand-teal/20 transition-colors">
+              <span className="text-xs tracking-[2px] text-brand-teal font-medium">SPIRIT</span>
+              <h3 className="text-base font-medium text-zinc-900 mt-2">Evening prayer</h3>
+              <p className="font-display text-3xl font-medium text-zinc-900 tracking-tight mt-2">
+                8 <span className="text-lg text-zinc-300">PM</span>
+              </p>
+              <p className="text-xs text-zinc-400 mt-1">Daily</p>
+            </div>
+            <div className="animate-on-scroll bg-white rounded-2xl p-6 border border-zinc-100 group hover:border-brand-teal/20 transition-colors">
+              <span className="text-xs tracking-[2px] text-brand-teal font-medium">SPIRIT</span>
+              <h3 className="text-base font-medium text-zinc-900 mt-2">Friday service</h3>
+              <p className="font-display text-3xl font-medium text-zinc-900 tracking-tight mt-2">
+                7 <span className="text-lg text-zinc-300">PM</span>
+              </p>
+              <p className="text-xs text-zinc-400 mt-1">Every Friday</p>
+            </div>
+          </div>
+        </ScrollReveal>
+        <ScrollReveal>
+          <div className="text-center mt-8">
+            <Link
+              href="/worship"
+              className="inline-flex items-center gap-2 text-sm font-medium text-brand-orange hover:underline"
+            >
+              See all gatherings
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
+                <path d="M5 12h14M12 5l7 7-7 7" />
+              </svg>
+            </Link>
           </div>
         </ScrollReveal>
       </div>
