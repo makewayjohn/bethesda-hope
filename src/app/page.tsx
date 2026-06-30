@@ -95,12 +95,15 @@ function WelcomeSection() {
 
 function ServiceTimesSection() {
   return (
-    <section className="bg-zinc-50 py-16 sm:py-24 px-6">
+    <section className="bg-zinc-50 py-14 sm:py-20 px-6">
       <div className="max-w-5xl mx-auto">
         <ScrollReveal>
-          <p className="text-xs tracking-[4px] text-zinc-400 mb-8 sm:mb-10">
+          <p className="text-xs tracking-[4px] text-zinc-400 mb-3 text-center sm:text-left">
             JOIN US
           </p>
+          <h2 className="font-display text-2xl sm:text-3xl font-medium text-zinc-900 tracking-tight text-center sm:text-left mb-8 sm:mb-10">
+            When we gather.
+          </h2>
         </ScrollReveal>
         <ScrollReveal stagger>
           <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
