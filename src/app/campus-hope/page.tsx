@@ -1,18 +1,28 @@
+import Image from "next/image";
 import ScrollReveal from "@/components/ScrollReveal";
 import CampusHopeSignup from "@/components/CampusHopeSignup";
 
 export default function CampusHopePage() {
   return (
     <>
-      <section className="pt-32 pb-20 px-6 bg-zinc-50">
-        <div className="max-w-3xl mx-auto text-center">
-          <p className="text-xs tracking-[4px] text-zinc-400 mb-6">
+      <section className="relative pt-40 pb-24 px-6 flex items-end min-h-[70vh]">
+        <Image
+          src="/images/campus_hope.jpeg"
+          alt="Campus Hope outreach at a Tbilisi university"
+          fill
+          priority
+          className="object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/50 to-black/20" />
+
+        <div className="relative max-w-3xl mx-auto text-center">
+          <p className="text-xs tracking-[4px] text-brand-orange mb-6">
             CAMPUS HOPE
           </p>
-          <h1 className="font-display text-4xl sm:text-5xl font-medium tracking-tight leading-tight text-zinc-900">
+          <h1 className="font-display text-4xl sm:text-5xl font-medium tracking-tight leading-tight text-white">
             Bringing hope to the campus, one student at a time.
           </h1>
-          <p className="text-lg text-zinc-500 leading-relaxed mt-6 max-w-xl mx-auto">
+          <p className="text-lg text-white/70 leading-relaxed mt-6 max-w-xl mx-auto">
             Once a week, we go out to the universities of Tbilisi — meeting
             students, praying blessing over them, and loving our neighbors the
             way Jesus taught us to.
