@@ -6,11 +6,11 @@ function HeroSection() {
   return (
     <section className="relative h-screen min-h-[600px] flex items-end bg-zinc-900">
       <Image
-        src="/images/vision2026.jpeg"
-        alt="2026 Vision: Walking as God's Beloved"
+        src="/images/group_worship.jpeg"
+        alt="Bethesda Hope Church worship gathering"
         fill
         priority
-        className="object-contain"
+        className="object-cover"
       />
       <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
 
@@ -65,7 +65,7 @@ function WelcomeSection() {
           </h2>
           <p className="text-base sm:text-lg text-zinc-500 leading-relaxed mt-6 max-w-xl mx-auto">
             We are medical students, young dreamers, and seekers from India,
-            Pakistan, Africa, and beyond — becoming family in Jesus in the heart
+            Pakistan, Africa, and beyond, becoming family in Jesus in the heart
             of Tbilisi.
           </p>
           <Link
