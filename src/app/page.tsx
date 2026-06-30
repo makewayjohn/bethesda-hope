@@ -3,6 +3,7 @@ import Image from "next/image";
 import ScrollReveal from "@/components/ScrollReveal";
 import UrgentPrayerSection from "@/components/UrgentPrayerSection";
 import YearCard from "@/components/YearCard";
+import PillarsDiagram from "@/components/PillarsDiagram";
 
 function HeroSection() {
   return (
@@ -215,66 +216,19 @@ function PhotoGridSection() {
 }
 
 function PillarsSection() {
-  const pillars = [
-    {
-      num: "01",
-      title: "Identity",
-      desc: "You are not defined by people's words, but by Christ's.",
-      accent: "orange" as const,
-    },
-    {
-      num: "02",
-      title: "Community",
-      desc: "Not consuming church, but becoming family in Jesus.",
-      accent: "teal" as const,
-    },
-    {
-      num: "03",
-      title: "Leadership",
-      desc: "Knowing God, knowing yourself, knowing your neighbor.",
-      accent: "teal" as const,
-    },
-    {
-      num: "04",
-      title: "Mission",
-      desc: "Your dorm, hospital, and nation — your entire life is mission.",
-      accent: "orange" as const,
-    },
-  ];
-
   return (
     <section className="bg-brand-dark py-20 sm:py-28 px-6">
       <div className="max-w-5xl mx-auto">
         <ScrollReveal>
-          <p className="text-xs tracking-[4px] text-white/30 mb-10">
+          <p className="text-xs tracking-[4px] text-white/30 mb-3 text-center">
             WHAT DRIVES US
           </p>
+          <h2 className="font-display text-2xl sm:text-3xl font-medium text-white tracking-tight text-center mb-12 sm:mb-16">
+            Four pillars, one center.
+          </h2>
         </ScrollReveal>
-        <ScrollReveal stagger>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            {pillars.map((p) => (
-              <div
-                key={p.num}
-                className="animate-on-scroll bg-white/5 rounded-2xl p-7 sm:p-8 relative overflow-hidden group hover:bg-white/[0.08] transition-colors"
-              >
-                <span className="absolute top-5 right-6 font-display text-5xl font-medium text-white/[0.04] italic">
-                  {p.num}
-                </span>
-                <span
-                  className={`inline-block px-3.5 py-1 rounded-full text-xs font-medium mb-3 ${
-                    p.accent === "orange"
-                      ? "bg-brand-orange/20 text-brand-orange"
-                      : "bg-brand-teal/20 text-brand-teal"
-                  }`}
-                >
-                  {p.title}
-                </span>
-                <p className="text-[15px] text-white/70 leading-relaxed">
-                  {p.desc}
-                </p>
-              </div>
-            ))}
-          </div>
+        <ScrollReveal>
+          <PillarsDiagram />
         </ScrollReveal>
       </div>
     </section>
