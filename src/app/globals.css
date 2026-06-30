@@ -42,7 +42,8 @@ html {
   animation-play-state: paused;
 }
 
-.animate-on-scroll.is-visible {
+.animate-on-scroll.is-visible,
+.is-visible .animate-on-scroll {
   animation-play-state: running;
 }
 
