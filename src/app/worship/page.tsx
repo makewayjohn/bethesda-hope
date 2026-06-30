@@ -1,5 +1,151 @@
+"use client";
+
+import { useState } from "react";
 import Link from "next/link";
 import ScrollReveal from "@/components/ScrollReveal";
+
+type Gathering = {
+  id: string;
+  time: string;
+  ampm: string;
+  title: string;
+  summary: string;
+  badge: string;
+  details: string[];
+};
+
+const wordGatherings: Gathering[] = [
+  {
+    id: "morning-devotion",
+    time: "10",
+    ampm: "AM",
+    title: "Morning devotion",
+    summary: "Scripture reading and sharing",
+    badge: "DAILY",
+    details: [
+      "A short, focused time around God's Word to start the day grounded — Scripture reading, reflection, and brief sharing.",
+      "Open to anyone, students and staff alike. Come as you are, even between classes.",
+      "Usually 30–40 minutes, followed by short prayer for the day ahead.",
+    ],
+  },
+  {
+    id: "sunday-worship",
+    time: "3",
+    ampm: "PM",
+    title: "Sunday worship",
+    summary: "Main service — worship, Word, prayer, fellowship",
+    badge: "SUNDAY",
+    details: [
+      "Our main weekly gathering — worship, a message from God's Word, prayer, and fellowship together.",
+      "Includes time for new faces to be welcomed and connected with a small group or leader.",
+      "Fellowship and food usually follow the service — stay and meet the community.",
+    ],
+  },
+];
+
+const spiritGatherings: Gathering[] = [
+  {
+    id: "evening-prayer",
+    time: "8",
+    ampm: "PM",
+    title: "Evening prayer",
+    summary: "Intercession for the church and the nations",
+    badge: "DAILY",
+    details: [
+      "A daily evening gathering devoted to prayer — for the church, for students' needs, and for the nations represented in our community.",
+      "A space to bring personal burdens, give thanks, and intercede together.",
+      "Quieter and more intimate than Sunday worship — come even just to sit and pray.",
+    ],
+  },
+  {
+    id: "friday-service",
+    time: "7",
+    ampm: "PM",
+    title: "Friday service",
+    summary: "Spirit-led worship, prayer ministry, encountering God",
+    badge: "FRIDAY",
+    details: [
+      "An extended time of Spirit-led worship and prayer ministry to close out the week in God's presence.",
+      "Includes space for personal prayer ministry — for healing, breakthrough, and encountering God.",
+      "Often runs longer than other gatherings as the Spirit leads.",
+    ],
+  },
+];
+
+function GatheringCard({
+  item,
+  accent,
+}: {
+  item: Gathering;
+  accent: "orange" | "teal";
+}) {
+  const [open, setOpen] = useState(false);
+  const color =
+    accent === "orange"
+      ? "text-brand-orange bg-brand-orange/8"
+      : "text-brand-teal bg-brand-teal/8";
+
+  return (
+    <button
+      type="button"
+      onClick={() => setOpen((v) => !v)}
+      aria-expanded={open}
+      className="w-full text-left bg-white rounded-xl border border-zinc-100 p-5 hover:border-zinc-200 transition-colors"
+    >
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+        <div className="flex items-center gap-4">
+          <div className="font-display text-2xl font-medium text-zinc-900 w-24">
+            {item.time} <span className="text-base text-zinc-300">{item.ampm}</span>
+          </div>
+          <div>
+            <h3 className="font-medium text-zinc-900">{item.title}</h3>
+            <p className="text-sm text-zinc-500">{item.summary}</p>
+          </div>
+        </div>
+        <div className="flex items-center gap-3 self-start sm:self-center">
+          <span
+            className={`text-xs tracking-[2px] px-3 py-1 rounded-full font-medium ${color}`}
+          >
+            {item.badge}
+          </span>
+          <svg
+            className={`w-4 h-4 text-zinc-300 transition-transform ${
+              open ? "rotate-180" : ""
+            }`}
+            fill="none"
+            stroke="currentColor"
+            strokeWidth={2}
+            viewBox="0 0 24 24"
+          >
+            <path d="M19 9l-7 7-7-7" />
+          </svg>
+        </div>
+      </div>
+
+      <div
+        className={`grid transition-all duration-300 ease-in-out ${
+          open ? "grid-rows-[1fr] mt-4" : "grid-rows-[0fr]"
+        }`}
+      >
+        <div className="overflow-hidden">
+          <ul className="space-y-2 pt-4 border-t border-zinc-100">
+            {item.details.map((d, i) => (
+              <li
+                key={i}
+                className="text-sm text-zinc-500 leading-relaxed flex gap-2"
+              >
+                <span className={accent === "orange" ? "text-brand-orange" : "text-brand-teal"}>
+                  &bull;
+                </span>
+                <span>{d}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </button>
+  );
+}
 
 export default function WorshipPage() {
   return (
@@ -21,8 +167,11 @@ export default function WorshipPage() {
       <section className="py-20 px-6">
         <div className="max-w-4xl mx-auto">
           <ScrollReveal>
-            <p className="text-xs tracking-[4px] text-zinc-400 mb-10">
+            <p className="text-xs tracking-[4px] text-zinc-400 mb-3">
               WEEKLY SCHEDULE
+            </p>
+            <p className="text-sm text-zinc-400 mb-10">
+              Tap a gathering for more details.
             </p>
 
             {/* Word-focused */}
@@ -43,42 +192,9 @@ export default function WorshipPage() {
                 </div>
               </div>
               <div className="space-y-3">
-                <div className="bg-white rounded-xl border border-zinc-100 p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
-                  <div className="flex items-center gap-4">
-                    <div className="font-display text-2xl font-medium text-zinc-900 w-24">
-                      10 <span className="text-base text-zinc-300">AM</span>
-                    </div>
-                    <div>
-                      <h3 className="font-medium text-zinc-900">
-                        Morning devotion
-                      </h3>
-                      <p className="text-sm text-zinc-500">
-                        Scripture reading and sharing
-                      </p>
-                    </div>
-                  </div>
-                  <span className="text-xs tracking-[2px] text-brand-orange bg-brand-orange/8 px-3 py-1 rounded-full font-medium self-start sm:self-center">
-                    DAILY
-                  </span>
-                </div>
-                <div className="bg-white rounded-xl border border-zinc-100 p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
-                  <div className="flex items-center gap-4">
-                    <div className="font-display text-2xl font-medium text-zinc-900 w-24">
-                      3 <span className="text-base text-zinc-300">PM</span>
-                    </div>
-                    <div>
-                      <h3 className="font-medium text-zinc-900">
-                        Sunday worship
-                      </h3>
-                      <p className="text-sm text-zinc-500">
-                        Main service — worship, Word, prayer, fellowship
-                      </p>
-                    </div>
-                  </div>
-                  <span className="text-xs tracking-[2px] text-brand-orange bg-brand-orange/8 px-3 py-1 rounded-full font-medium self-start sm:self-center">
-                    SUNDAY
-                  </span>
-                </div>
+                {wordGatherings.map((g) => (
+                  <GatheringCard key={g.id} item={g} accent="orange" />
+                ))}
               </div>
             </div>
 
@@ -101,42 +217,9 @@ export default function WorshipPage() {
                 </div>
               </div>
               <div className="space-y-3">
-                <div className="bg-white rounded-xl border border-zinc-100 p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
-                  <div className="flex items-center gap-4">
-                    <div className="font-display text-2xl font-medium text-zinc-900 w-24">
-                      8 <span className="text-base text-zinc-300">PM</span>
-                    </div>
-                    <div>
-                      <h3 className="font-medium text-zinc-900">
-                        Evening prayer
-                      </h3>
-                      <p className="text-sm text-zinc-500">
-                        Intercession for the church and the nations
-                      </p>
-                    </div>
-                  </div>
-                  <span className="text-xs tracking-[2px] text-brand-teal bg-brand-teal/8 px-3 py-1 rounded-full font-medium self-start sm:self-center">
-                    DAILY
-                  </span>
-                </div>
-                <div className="bg-white rounded-xl border border-zinc-100 p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
-                  <div className="flex items-center gap-4">
-                    <div className="font-display text-2xl font-medium text-zinc-900 w-24">
-                      7 <span className="text-base text-zinc-300">PM</span>
-                    </div>
-                    <div>
-                      <h3 className="font-medium text-zinc-900">
-                        Friday service
-                      </h3>
-                      <p className="text-sm text-zinc-500">
-                        Spirit-led worship, prayer ministry, encountering God
-                      </p>
-                    </div>
-                  </div>
-                  <span className="text-xs tracking-[2px] text-brand-teal bg-brand-teal/8 px-3 py-1 rounded-full font-medium self-start sm:self-center">
-                    FRIDAY
-                  </span>
-                </div>
+                {spiritGatherings.map((g) => (
+                  <GatheringCard key={g.id} item={g} accent="teal" />
+                ))}
               </div>
             </div>
           </ScrollReveal>
