@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useState } from "react";
 
 const navLinks = [
@@ -18,16 +19,13 @@ export default function Navbar() {
     <header className="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md border-b border-black/5">
       <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
         <Link href="/" className="flex items-center gap-2.5">
-          <div className="w-8 h-8 rounded-full bg-brand-orange flex items-center justify-center">
-            <svg
-              viewBox="0 0 24 24"
-              className="w-4 h-4 text-white"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth={2.5}
-            >
-              <path d="M12 4v16M6 10h12" />
-            </svg>
+          <div className="w-8 h-8 relative shrink-0">
+            <Image
+              src="/images/logo.jpeg"
+              alt="Bethesda Hope Church logo"
+              fill
+              className="object-contain"
+            />
           </div>
           <span className="text-sm font-medium tracking-[2px] text-black/90">
             BETHESDA HOPE

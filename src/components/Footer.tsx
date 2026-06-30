@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 const quickLinks = [
   { href: "/about", label: "About" },
@@ -20,16 +21,13 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
           <div className="md:col-span-2">
             <div className="flex items-center gap-2.5 mb-4">
-              <div className="w-8 h-8 rounded-full bg-brand-orange flex items-center justify-center">
-                <svg
-                  viewBox="0 0 24 24"
-                  className="w-4 h-4 text-white"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth={2.5}
-                >
-                  <path d="M12 4v16M6 10h12" />
-                </svg>
+              <div className="w-8 h-8 relative shrink-0">
+                <Image
+                  src="/images/logo.jpeg"
+                  alt="Bethesda Hope Church logo"
+                  fill
+                  className="object-contain"
+                />
               </div>
               <span className="text-sm font-medium tracking-wider">
                 BETHESDA HOPE CHURCH
