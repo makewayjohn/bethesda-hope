@@ -51,6 +51,62 @@ export default function CampusHopePage() {
         </div>
       </section>
 
+      {/* Ministry areas */}
+      <section className="py-20 px-6">
+        <div className="max-w-4xl mx-auto">
+          <ScrollReveal>
+            <p className="text-xs tracking-[4px] text-zinc-400 mb-3 text-center">
+              CAMPUS MINISTRY
+            </p>
+            <h2 className="font-display text-2xl sm:text-3xl font-medium text-zinc-900 tracking-tight text-center mb-14">
+              How we serve the campus.
+            </h2>
+          </ScrollReveal>
+          <ScrollReveal stagger>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+              {[
+                {
+                  title: "Campus Outreach",
+                  desc: "Going out to meet students on campus and share the love of Jesus.",
+                },
+                {
+                  title: "New Student Support",
+                  desc: "Helping freshmen settle into a new city, culture, and university life.",
+                },
+                {
+                  title: "Student Care & Mentoring",
+                  desc: "Walking alongside students personally — life, faith, and everything between.",
+                },
+                {
+                  title: "Academic Counseling & Support",
+                  desc: "Encouraging and supporting students through the pressures of medical school.",
+                },
+                {
+                  title: "Prayer Request Care",
+                  desc: "Keeping track of students' prayer needs and following up faithfully.",
+                },
+                {
+                  title: "Campus Ministry Planning",
+                  desc: "Planning and leading the weekly outreach and campus-focused events.",
+                },
+              ].map((item) => (
+                <div
+                  key={item.title}
+                  className="animate-on-scroll bg-zinc-50 rounded-2xl p-6 border border-zinc-100"
+                >
+                  <h3 className="text-base font-medium text-zinc-900">
+                    {item.title}
+                  </h3>
+                  <p className="text-sm text-zinc-500 mt-2 leading-relaxed">
+                    {item.desc}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </ScrollReveal>
+        </div>
+      </section>
+
       {/* How it works */}
       <section className="bg-zinc-50 py-20 px-6">
         <div className="max-w-4xl mx-auto">
