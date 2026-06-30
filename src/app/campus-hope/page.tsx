@@ -63,7 +63,7 @@ export default function CampusHopePage() {
       </section>
 
       {/* Ministry areas */}
-      <section className="py-20 px-6">
+      <section className="pt-20 pb-10 px-6">
         <div className="max-w-4xl mx-auto">
           <ScrollReveal>
             <p className="text-xs tracking-[4px] text-zinc-400 mb-3 text-center">
