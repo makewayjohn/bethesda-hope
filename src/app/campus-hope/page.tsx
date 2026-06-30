@@ -131,52 +131,8 @@ export default function CampusHopePage() {
         </div>
       </section>
 
-      {/* How it works */}
-      <section className="bg-zinc-50 py-20 px-6">
-        <div className="max-w-4xl mx-auto">
-          <ScrollReveal>
-            <p className="text-xs tracking-[4px] text-zinc-400 mb-10 text-center">
-              HOW IT WORKS
-            </p>
-          </ScrollReveal>
-          <ScrollReveal stagger>
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
-              {[
-                {
-                  step: "01",
-                  title: "Go out, weekly",
-                  desc: "Once a week, our team heads out to a university campus in Tbilisi.",
-                },
-                {
-                  step: "02",
-                  title: "Meet & bless",
-                  desc: "We meet students, hear their hearts, and pray a blessing over them — right there.",
-                },
-                {
-                  step: "03",
-                  title: "Walk alongside",
-                  desc: "When a student needs help — practical or spiritual — our community steps in.",
-                },
-              ].map((item) => (
-                <div
-                  key={item.step}
-                  className="animate-on-scroll bg-white rounded-2xl p-6 border border-zinc-100"
-                >
-                  <span className="text-3xl font-medium text-zinc-100">
-                    {item.step}
-                  </span>
-                  <h3 className="text-base font-medium text-zinc-900 mt-3">
-                    {item.title}
-                  </h3>
-                  <p className="text-sm text-zinc-500 mt-2 leading-relaxed">
-                    {item.desc}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </ScrollReveal>
-        </div>
-      </section>
+      {/* Sign up */}
+      <CampusHopeSignup />
 
       {/* Verse */}
       <section className="bg-brand-dark py-20 px-6">
@@ -189,9 +145,6 @@ export default function CampusHopePage() {
           </div>
         </ScrollReveal>
       </section>
-
-      {/* Sign up */}
-      <CampusHopeSignup />
     </>
   );
 }
