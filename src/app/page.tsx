@@ -161,11 +161,31 @@ function ServiceTimesSection() {
 
 function PhotoGridSection() {
   const photos = [
-    { label: "Sunday worship", span: "col-span-2 row-span-2 aspect-auto min-h-[280px] sm:min-h-[360px]" },
-    { label: "Fellowship", span: "aspect-square" },
-    { label: "Bible study", span: "aspect-square" },
-    { label: "Summer camp", span: "aspect-square" },
-    { label: "Outreach", span: "aspect-square" },
+    {
+      label: "Sunday worship",
+      src: "/images/life_worship.jpg",
+      span: "col-span-2 row-span-2 aspect-auto min-h-[280px] sm:min-h-[360px]",
+    },
+    {
+      label: "Fellowship",
+      src: "/images/life_fellowship.jpg",
+      span: "aspect-square",
+    },
+    {
+      label: "Small groups",
+      src: "/images/life_smallgroup.jpg",
+      span: "aspect-square",
+    },
+    {
+      label: "Celebration",
+      src: "/images/life_celebration.jpg",
+      span: "aspect-square",
+    },
+    {
+      label: "Prayer",
+      src: "/images/life_prayer.jpg",
+      span: "aspect-square",
+    },
   ];
 
   return (
@@ -198,18 +218,18 @@ function PhotoGridSection() {
             {photos.map((p) => (
               <div
                 key={p.label}
-                className={`${p.span} bg-zinc-100 rounded-xl sm:rounded-2xl flex flex-col items-center justify-center hover:bg-zinc-200/80 transition-colors cursor-pointer`}
+                className={`${p.span} relative rounded-xl sm:rounded-2xl overflow-hidden group cursor-pointer`}
               >
-                <svg
-                  className="w-8 h-8 text-zinc-300"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth={1.5}
-                  viewBox="0 0 24 24"
-                >
-                  <path d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909M3.75 21h16.5A2.25 2.25 0 0022.5 18.75V5.25A2.25 2.25 0 0020.25 3H3.75A2.25 2.25 0 001.5 5.25v13.5A2.25 2.25 0 003.75 21z" />
-                </svg>
-                <p className="text-xs text-zinc-400 mt-2">{p.label}</p>
+                <Image
+                  src={p.src}
+                  alt={p.label}
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-300"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/0 to-black/0" />
+                <p className="absolute bottom-2.5 left-3 sm:bottom-3.5 sm:left-4 text-xs sm:text-sm text-white font-medium">
+                  {p.label}
+                </p>
               </div>
             ))}
           </div>
