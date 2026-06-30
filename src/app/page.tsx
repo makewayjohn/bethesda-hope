@@ -4,6 +4,7 @@ import ScrollReveal from "@/components/ScrollReveal";
 import UrgentPrayerSection from "@/components/UrgentPrayerSection";
 import YearCard from "@/components/YearCard";
 import PillarsDiagram from "@/components/PillarsDiagram";
+import WhyJoinSection from "@/components/WhyJoinSection";
 
 function HeroSection() {
   return (
@@ -56,11 +57,11 @@ function HeroSection() {
 
 function WelcomeSection() {
   return (
-    <section className="py-20 sm:py-32 px-6">
+    <section className="py-16 sm:py-28 px-6">
       <ScrollReveal>
         <div className="max-w-3xl mx-auto text-center">
-          <p className="text-xs tracking-[4px] text-zinc-400 mb-6">WELCOME</p>
-          <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-medium tracking-tight leading-snug text-zinc-900">
+          <p className="text-xs tracking-[4px] text-zinc-400 mb-5 sm:mb-6">WELCOME</p>
+          <h2 className="font-display text-[1.75rem] sm:text-4xl lg:text-5xl font-medium tracking-tight leading-snug text-zinc-900">
             You belong here
             <br className="hidden sm:block" />
             <span className="font-display italic"> before</span> you believe
@@ -94,16 +95,16 @@ function WelcomeSection() {
 
 function ServiceTimesSection() {
   return (
-    <section className="bg-zinc-50 py-20 px-6">
+    <section className="bg-zinc-50 py-16 sm:py-24 px-6">
       <div className="max-w-5xl mx-auto">
         <ScrollReveal>
-          <p className="text-xs tracking-[4px] text-zinc-400 mb-10">
+          <p className="text-xs tracking-[4px] text-zinc-400 mb-8 sm:mb-10">
             JOIN US
           </p>
         </ScrollReveal>
         <ScrollReveal stagger>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            <div className="animate-on-scroll bg-white rounded-2xl p-6 border border-zinc-100 group hover:border-brand-orange/20 transition-colors">
+          <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
+            <div className="animate-on-scroll bg-white rounded-2xl p-4 sm:p-6 border border-zinc-100 group hover:border-brand-orange/20 transition-colors">
               <span className="text-xs tracking-[2px] text-brand-orange font-medium">WORD</span>
               <h3 className="text-base font-medium text-zinc-900 mt-2">Morning devotion</h3>
               <p className="font-display text-3xl font-medium text-zinc-900 tracking-tight mt-2">
@@ -111,7 +112,7 @@ function ServiceTimesSection() {
               </p>
               <p className="text-xs text-zinc-400 mt-1">Daily</p>
             </div>
-            <div className="animate-on-scroll bg-white rounded-2xl p-6 border border-zinc-100 group hover:border-brand-orange/20 transition-colors">
+            <div className="animate-on-scroll bg-white rounded-2xl p-4 sm:p-6 border border-zinc-100 group hover:border-brand-orange/20 transition-colors">
               <span className="text-xs tracking-[2px] text-brand-orange font-medium">WORD</span>
               <h3 className="text-base font-medium text-zinc-900 mt-2">Sunday worship</h3>
               <p className="font-display text-3xl font-medium text-zinc-900 tracking-tight mt-2">
@@ -119,7 +120,7 @@ function ServiceTimesSection() {
               </p>
               <p className="text-xs text-zinc-400 mt-1">Every Sunday</p>
             </div>
-            <div className="animate-on-scroll bg-white rounded-2xl p-6 border border-zinc-100 group hover:border-brand-teal/20 transition-colors">
+            <div className="animate-on-scroll bg-white rounded-2xl p-4 sm:p-6 border border-zinc-100 group hover:border-brand-teal/20 transition-colors">
               <span className="text-xs tracking-[2px] text-brand-teal font-medium">SPIRIT</span>
               <h3 className="text-base font-medium text-zinc-900 mt-2">Evening prayer</h3>
               <p className="font-display text-3xl font-medium text-zinc-900 tracking-tight mt-2">
@@ -127,7 +128,7 @@ function ServiceTimesSection() {
               </p>
               <p className="text-xs text-zinc-400 mt-1">Daily</p>
             </div>
-            <div className="animate-on-scroll bg-white rounded-2xl p-6 border border-zinc-100 group hover:border-brand-teal/20 transition-colors">
+            <div className="animate-on-scroll bg-white rounded-2xl p-4 sm:p-6 border border-zinc-100 group hover:border-brand-teal/20 transition-colors">
               <span className="text-xs tracking-[2px] text-brand-teal font-medium">SPIRIT</span>
               <h3 className="text-base font-medium text-zinc-900 mt-2">Friday service</h3>
               <p className="font-display text-3xl font-medium text-zinc-900 tracking-tight mt-2">
@@ -165,7 +166,7 @@ function PhotoGridSection() {
   ];
 
   return (
-    <section className="py-20 px-6">
+    <section className="py-16 sm:py-24 px-6">
       <div className="max-w-5xl mx-auto">
         <ScrollReveal>
           <div className="flex justify-between items-center mb-8">
@@ -217,7 +218,7 @@ function PhotoGridSection() {
 
 function PillarsSection() {
   return (
-    <section className="bg-brand-dark py-20 sm:py-28 px-6">
+    <section className="bg-brand-dark py-16 sm:py-24 px-6">
       <div className="max-w-5xl mx-auto">
         <ScrollReveal>
           <p className="text-xs tracking-[4px] text-white/30 mb-3 text-center">
@@ -237,7 +238,7 @@ function PillarsSection() {
 
 function VisionSection() {
   return (
-    <section className="py-24 sm:py-36 px-6">
+    <section className="py-20 sm:py-32 px-6">
       <ScrollReveal>
         <div className="max-w-3xl mx-auto text-center">
           <p className="text-xs tracking-[4px] text-zinc-400 mb-6">
@@ -335,7 +336,7 @@ function VisionTimelineSection() {
   ];
 
   return (
-    <section className="bg-zinc-50 py-20 sm:py-28 px-6 overflow-hidden">
+    <section className="bg-zinc-50 py-16 sm:py-24 px-6 overflow-hidden">
       <div className="max-w-3xl mx-auto">
         <ScrollReveal>
           <p className="text-xs tracking-[4px] text-zinc-400 mb-3 text-center">
@@ -401,6 +402,7 @@ export default function Home() {
       <ServiceTimesSection />
       <PhotoGridSection />
       <PillarsSection />
+      <WhyJoinSection />
       <VisionSection />
       <VisionTimelineSection />
       <UrgentPrayerSection />
