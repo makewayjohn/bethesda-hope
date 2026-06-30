@@ -78,44 +78,92 @@ export default function AboutPage() {
       {/* Mission flow */}
       <section className="py-24 px-6">
         <div className="max-w-4xl mx-auto">
-          <p className="text-xs tracking-[4px] text-zinc-400 mb-10">
+          <p className="text-xs tracking-[4px] text-zinc-400 mb-3">
             OUR JOURNEY
           </p>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {[
-              {
-                step: "01",
-                title: "Identity",
-                desc: "Discover who you are in Christ — not by people's words, but by His.",
-              },
-              {
-                step: "02",
-                title: "Renewal",
-                desc: "Let the gospel renew your mind, emotions, and self-image.",
-              },
-              {
-                step: "03",
-                title: "Community",
-                desc: "Grow together as family — broken people becoming whole in Jesus.",
-              },
-              {
-                step: "04",
-                title: "Mission",
-                desc: "Be sent as a witness to your dorm, hospital, and nation.",
-              },
-            ].map((item) => (
-              <div key={item.step} className="group">
-                <span className="text-4xl font-medium text-zinc-100 group-hover:text-brand-orange/20 transition-colors">
-                  {item.step}
-                </span>
-                <h3 className="text-lg font-medium text-zinc-900 mt-2">
-                  {item.title}
-                </h3>
-                <p className="text-sm text-zinc-500 mt-2 leading-relaxed">
-                  {item.desc}
-                </p>
-              </div>
-            ))}
+          <h2 className="font-display text-2xl sm:text-3xl font-medium text-zinc-900 tracking-tight mb-3">
+            Not just words. This is what we live out, weekly.
+          </h2>
+          <p className="text-sm text-zinc-500 leading-relaxed mb-14 max-w-2xl">
+            Four steps, four real, ongoing rhythms — not a slogan on a wall.
+          </p>
+
+          <div className="relative">
+            <div className="absolute left-5 top-2 bottom-2 w-px bg-zinc-200 hidden sm:block" />
+
+            <div className="space-y-10">
+              {[
+                {
+                  step: "01",
+                  title: "Identity",
+                  desc: "Discover who you are in Christ — not by people's words, but by His.",
+                  proof:
+                    "Lived out in our 6-part, 30-lesson discipleship curriculum, walked through one-on-one and in small groups every week.",
+                  accent: "orange" as const,
+                },
+                {
+                  step: "02",
+                  title: "Renewal",
+                  desc: "Let the gospel renew your mind, emotions, and self-image.",
+                  proof:
+                    "Lived out in daily morning devotion (10AM) and evening prayer (8PM) — every single day, not just Sundays.",
+                  accent: "teal" as const,
+                },
+                {
+                  step: "03",
+                  title: "Community",
+                  desc: "Grow together as family — broken people becoming whole in Jesus.",
+                  proof:
+                    "Lived out in Winter Camp, mother-tongue prayer meetings, baptisms, and a 162-person cricket tournament that funded scholarships.",
+                  accent: "orange" as const,
+                },
+                {
+                  step: "04",
+                  title: "Mission",
+                  desc: "Be sent as a witness to your dorm, hospital, and nation.",
+                  proof:
+                    "Lived out every week in Campus Hope — going out to Tbilisi's universities to bless and pray for students, and in trips like our Korea Vision Trip.",
+                  accent: "teal" as const,
+                },
+              ].map((item) => (
+                <div key={item.step} className="relative sm:pl-16 group">
+                  <span
+                    className={`absolute left-0 top-0 hidden sm:flex w-10 h-10 rounded-full items-center justify-center text-xs font-medium z-10 ${
+                      item.accent === "orange"
+                        ? "bg-brand-orange text-white"
+                        : "bg-brand-teal text-white"
+                    }`}
+                  >
+                    {item.step}
+                  </span>
+                  <span className="text-3xl sm:hidden font-medium text-zinc-100">
+                    {item.step}
+                  </span>
+                  <h3 className="text-lg font-medium text-zinc-900 mt-1 sm:mt-1.5">
+                    {item.title}
+                  </h3>
+                  <p className="text-sm text-zinc-500 mt-1.5 leading-relaxed">
+                    {item.desc}
+                  </p>
+                  <div
+                    className={`flex gap-2 items-start mt-3 text-sm rounded-xl p-3.5 ${
+                      item.accent === "orange"
+                        ? "bg-brand-orange/6 text-zinc-700"
+                        : "bg-brand-teal/6 text-zinc-700"
+                    }`}
+                  >
+                    <span
+                      className={`text-xs font-medium tracking-wide shrink-0 mt-0.5 ${
+                        item.accent === "orange" ? "text-brand-orange" : "text-brand-teal"
+                      }`}
+                    >
+                      IN PRACTICE
+                    </span>
+                    <span className="leading-relaxed">{item.proof}</span>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
