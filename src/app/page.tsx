@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import ScrollReveal from "@/components/ScrollReveal";
 import UrgentPrayerSection from "@/components/UrgentPrayerSection";
+import YearCard from "@/components/YearCard";
 
 function HeroSection() {
   return (
@@ -417,35 +418,14 @@ function VisionTimelineSection() {
                       i % 2 === 0 ? "sm:pr-16 sm:text-right" : "sm:pl-16"
                     }`}
                   >
-                    <div className="bg-white rounded-2xl p-6 border border-zinc-100 inline-block w-full sm:w-auto sm:max-w-sm">
-                      <p className="text-xs font-medium text-brand-orange tracking-wide mb-2">
-                        {item.theme}
-                      </p>
-                      <p className="font-display italic text-lg text-zinc-900 leading-snug">
-                        &ldquo;{item.verse}&rdquo;
-                      </p>
-                      <p className="text-xs text-zinc-400 mt-3">{item.ref}</p>
-
-                      {item.highlights.length > 0 && (
-                        <ul
-                          className={`mt-5 space-y-2.5 text-left ${
-                            i % 2 === 0 ? "sm:text-left" : ""
-                          }`}
-                        >
-                          {item.highlights.map((h, idx) => (
-                            <li
-                              key={idx}
-                              className="text-sm text-zinc-500 leading-relaxed flex gap-2"
-                            >
-                              <span className="text-brand-orange mt-1.5 shrink-0">
-                                &bull;
-                              </span>
-                              <span>{h}</span>
-                            </li>
-                          ))}
-                        </ul>
-                      )}
-                    </div>
+                    <YearCard
+                      year={item.year}
+                      verse={item.verse}
+                      ref={item.ref}
+                      theme={item.theme}
+                      highlights={item.highlights}
+                      align={i % 2 === 0 ? "right" : "left"}
+                    />
                   </div>
 
                   <div className="hidden sm:block flex-1" />
