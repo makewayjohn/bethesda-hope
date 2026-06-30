@@ -18,11 +18,16 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Photo placeholder */}
+      {/* Photo */}
       <section className="px-6">
         <div className="max-w-5xl mx-auto -mt-4">
-          <div className="aspect-video bg-zinc-200 rounded-2xl flex items-center justify-center">
-            <p className="text-sm text-zinc-400">Church family photo</p>
+          <div className="aspect-video relative rounded-2xl overflow-hidden">
+            <Image
+              src="/images/about_group.jpeg"
+              alt="Bethesda Hope Church family"
+              fill
+              className="object-cover"
+            />
           </div>
         </div>
       </section>
