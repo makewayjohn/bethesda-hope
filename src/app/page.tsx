@@ -349,18 +349,32 @@ function VisionTimelineSection() {
       verse: "The disciples were filled with joy and the Holy Spirit.",
       ref: "Acts 13:52",
       theme: "Joy & the Holy Spirit",
+      highlights: [
+        "Bethesda Hope Winter Camp launched — students leading prayer, worship, and outreach together.",
+        "Bethesda Hope Cricket Tournament began, bringing Indian students together across teams to build friendship and share the gospel.",
+        "Weekly worship, discipleship, and community life grew steadily among medical students from India and beyond.",
+      ],
     },
     {
       year: "2025",
       verse: "Bethesda Hope and I are the glory and joy of Jesus.",
       ref: "1 Thessalonians 2:19–20",
       theme: "Glory & Joy",
+      highlights: [
+        "Korea Vision Trip — 8 Indian students served alongside a Korean church for 8 days, leading VBS for kids and youth.",
+        "2nd Bethesda Hope Winter Camp — about 80 students gathered to seek God's glory and joy together.",
+        "Two students, Sweetlin and Nithin, were baptized — stepping into new life in Christ.",
+        "Mother-tongue prayer meetings began — Telugu, Tamil, Hindi, and Malayalam worship led by the students themselves.",
+        "Cricket Tournament 2.0 — 18 teams and 162 young men competed, connected, and heard the gospel, with proceeds funding student scholarships.",
+        "Many new freshmen arrived already believers, and former new believers grew into leaders who now disciple others.",
+      ],
     },
     {
       year: "2026",
       verse: "Walking as God's Beloved — I am a Beloved Child of God.",
       ref: "Zephaniah 3:17",
       theme: "Beloved Identity",
+      highlights: [],
     },
   ];
 
@@ -410,6 +424,26 @@ function VisionTimelineSection() {
                         &ldquo;{item.verse}&rdquo;
                       </p>
                       <p className="text-xs text-zinc-400 mt-3">{item.ref}</p>
+
+                      {item.highlights.length > 0 && (
+                        <ul
+                          className={`mt-5 space-y-2.5 text-left ${
+                            i % 2 === 0 ? "sm:text-left" : ""
+                          }`}
+                        >
+                          {item.highlights.map((h, idx) => (
+                            <li
+                              key={idx}
+                              className="text-sm text-zinc-500 leading-relaxed flex gap-2"
+                            >
+                              <span className="text-brand-orange mt-1.5 shrink-0">
+                                &bull;
+                              </span>
+                              <span>{h}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      )}
                     </div>
                   </div>
 
