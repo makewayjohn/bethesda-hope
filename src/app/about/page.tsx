@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export default function AboutPage() {
   return (
@@ -58,13 +59,13 @@ export default function AboutPage() {
       <section className="bg-brand-dark py-20 px-6">
         <div className="max-w-3xl mx-auto text-center">
           <p className="text-xs tracking-[4px] text-white/30 mb-6">
-            2025 VISION
+            2026 VISION
           </p>
           <p className="text-2xl sm:text-3xl font-medium text-white leading-snug font-serif italic">
-            &ldquo;Bethesda Hope and I are the glory and joy of Jesus&rdquo;
+            &ldquo;Walking as God&apos;s Beloved — I am a Beloved Child of God&rdquo;
           </p>
           <p className="text-sm text-white/40 mt-4">
-            1 Thessalonians 2:19-20
+            Zephaniah 3:17
           </p>
         </div>
       </section>
@@ -114,42 +115,94 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Pastor */}
+      {/* Pastors */}
       <section className="bg-zinc-50 py-20 px-6">
-        <div className="max-w-4xl mx-auto flex flex-col sm:flex-row items-center gap-12">
-          <div className="w-48 h-48 rounded-2xl bg-zinc-200 flex-shrink-0 flex items-center justify-center">
-            <p className="text-sm text-zinc-400">Pastor photo</p>
-          </div>
-          <div>
-            <p className="text-xs tracking-[4px] text-zinc-400 mb-3">
-              OUR PASTOR
-            </p>
-            <h3 className="text-2xl font-medium text-zinc-900">
-              Pastor John
-            </h3>
-            <p className="text-sm text-zinc-500 mt-4 leading-relaxed max-w-lg">
-              Pastor John and his family serve in Tbilisi, Georgia, living among
-              and walking alongside the young people God has brought to this
-              city. His heart is to see every student discover who they are in
-              Christ and be sent out as a missionary in their own life.
-            </p>
-            <a
-              href="https://www.instagram.com/makewayjohn/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 text-sm font-medium text-brand-orange mt-4 hover:underline"
-            >
-              @makewayjohn
-              <svg
-                className="w-3.5 h-3.5"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth={2}
-                viewBox="0 0 24 24"
+        <div className="max-w-4xl mx-auto">
+          <p className="text-xs tracking-[4px] text-zinc-400 mb-3 text-center">
+            OUR MISSIONARIES
+          </p>
+          <h2 className="font-display text-2xl sm:text-3xl font-medium text-zinc-900 tracking-tight text-center mb-14">
+            Serving together in Tbilisi
+          </h2>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-10 sm:gap-8">
+            {/* Pastor John */}
+            <div className="text-center sm:text-left">
+              <div className="w-40 h-40 rounded-2xl relative overflow-hidden mx-auto sm:mx-0">
+                <Image
+                  src="/images/pastor_john_retouched.png"
+                  alt="Pastor John"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <h3 className="text-xl font-medium text-zinc-900 mt-5">
+                Pastor John
+              </h3>
+              <p className="text-sm text-brand-orange mt-1">Missionary</p>
+              <p className="text-sm text-zinc-500 mt-4 leading-relaxed">
+                Pastor John serves in Tbilisi, Georgia, living among and
+                walking alongside the young people God has brought to this
+                city. His heart is to see every student discover who they are
+                in Christ and be sent out as a missionary in their own life.
+              </p>
+              <a
+                href="https://www.instagram.com/makewayjohn/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 text-sm font-medium text-brand-orange mt-4 hover:underline"
               >
-                <path d="M7 17L17 7M17 7H7M17 7v10" />
-              </svg>
-            </a>
+                @makewayjohn
+                <svg
+                  className="w-3.5 h-3.5"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth={2}
+                  viewBox="0 0 24 24"
+                >
+                  <path d="M7 17L17 7M17 7H7M17 7v10" />
+                </svg>
+              </a>
+            </div>
+
+            {/* Missionary Abigail */}
+            <div className="text-center sm:text-left">
+              <div className="w-40 h-40 rounded-2xl relative overflow-hidden mx-auto sm:mx-0">
+                <Image
+                  src="/images/abigail_kim.jpeg"
+                  alt="Missionary Abigail Yujin Kim"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <h3 className="text-xl font-medium text-zinc-900 mt-5">
+                Abigail Yujin Kim
+              </h3>
+              <p className="text-sm text-brand-teal mt-1">Missionary</p>
+              <p className="text-sm text-zinc-500 mt-4 leading-relaxed">
+                Missionary Abigail serves alongside Pastor John in Tbilisi,
+                teaching and shepherding the young people of Bethesda Hope.
+                Her heart is to see this generation find true rest and
+                identity in Christ alone.
+              </p>
+              <a
+                href="https://www.instagram.com/aj.writesfaith/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 text-sm font-medium text-brand-teal mt-4 hover:underline"
+              >
+                @aj.writesfaith
+                <svg
+                  className="w-3.5 h-3.5"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth={2}
+                  viewBox="0 0 24 24"
+                >
+                  <path d="M7 17L17 7M17 7H7M17 7v10" />
+                </svg>
+              </a>
+            </div>
           </div>
         </div>
       </section>

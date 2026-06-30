@@ -1,15 +1,17 @@
 import Link from "next/link";
+import Image from "next/image";
 import ScrollReveal from "@/components/ScrollReveal";
 
 function HeroSection() {
   return (
     <section className="relative h-screen min-h-[600px] flex items-end bg-zinc-900">
-      <div className="absolute inset-0 bg-gradient-to-br from-brand-dark via-zinc-900 to-black" />
-      <div className="absolute inset-0 flex items-center justify-center">
-        <p className="text-white/10 text-sm tracking-widest">
-          WORSHIP PHOTO HERE
-        </p>
-      </div>
+      <Image
+        src="/images/vision2026.jpeg"
+        alt="2026 Vision: Walking as God's Beloved"
+        fill
+        priority
+        className="object-contain"
+      />
       <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
 
       <div className="relative max-w-7xl mx-auto px-6 pb-16 sm:pb-20 w-full">
@@ -282,12 +284,15 @@ function VisionSection() {
     <section className="py-24 sm:py-36 px-6">
       <ScrollReveal>
         <div className="max-w-3xl mx-auto text-center">
+          <p className="text-xs tracking-[4px] text-zinc-400 mb-6">
+            2026 VISION
+          </p>
           <p className="font-display italic text-3xl sm:text-4xl lg:text-5xl font-normal text-zinc-900 leading-snug tracking-tight">
-            &ldquo;Bethesda Hope and I are
-            <br className="hidden sm:block" /> the glory and joy of Jesus&rdquo;
+            &ldquo;Walking as God&apos;s Beloved
+            <br className="hidden sm:block" /> — I am a Beloved Child of God&rdquo;
           </p>
           <span className="inline-block mt-8 bg-brand-orange/8 text-brand-orange px-5 py-1.5 rounded-full text-xs font-medium tracking-wide">
-            1 Thessalonians 2:19–20
+            Zephaniah 3:17
           </span>
         </div>
       </ScrollReveal>
@@ -337,6 +342,88 @@ function CTASection() {
   );
 }
 
+function VisionTimelineSection() {
+  const years = [
+    {
+      year: "2024",
+      verse: "The disciples were filled with joy and the Holy Spirit.",
+      ref: "Acts 13:52",
+      theme: "Joy & the Holy Spirit",
+    },
+    {
+      year: "2025",
+      verse: "Bethesda Hope and I are the glory and joy of Jesus.",
+      ref: "1 Thessalonians 2:19–20",
+      theme: "Glory & Joy",
+    },
+    {
+      year: "2026",
+      verse: "Walking as God's Beloved — I am a Beloved Child of God.",
+      ref: "Zephaniah 3:17",
+      theme: "Beloved Identity",
+    },
+  ];
+
+  return (
+    <section className="bg-zinc-50 py-20 sm:py-28 px-6 overflow-hidden">
+      <div className="max-w-3xl mx-auto">
+        <ScrollReveal>
+          <p className="text-xs tracking-[4px] text-zinc-400 mb-3 text-center">
+            OUR JOURNEY WITH GOD
+          </p>
+          <h2 className="font-display text-3xl sm:text-4xl font-medium text-zinc-900 tracking-tight text-center mb-16">
+            How God has led us, year by year.
+          </h2>
+        </ScrollReveal>
+
+        <div className="relative">
+          <div className="absolute left-[27px] sm:left-1/2 top-0 bottom-0 w-px bg-zinc-200 sm:-translate-x-1/2" />
+
+          <div className="space-y-12">
+            {years.map((item, i) => (
+              <ScrollReveal key={item.year}>
+                <div
+                  className={`relative flex items-start gap-6 sm:gap-0 ${
+                    i % 2 === 0
+                      ? "sm:flex-row"
+                      : "sm:flex-row-reverse"
+                  }`}
+                >
+                  <div className="absolute left-0 sm:left-1/2 top-1 w-14 h-14 -translate-x-0 sm:-translate-x-1/2 rounded-full bg-brand-orange flex items-center justify-center z-10 shadow-lg shadow-brand-orange/20">
+                    <span className="text-white text-xs font-medium">
+                      {item.year}
+                    </span>
+                  </div>
+
+                  <div className="flex-1 sm:hidden" />
+
+                  <div
+                    className={`ml-20 sm:ml-0 flex-1 ${
+                      i % 2 === 0 ? "sm:pr-16 sm:text-right" : "sm:pl-16"
+                    }`}
+                  >
+                    <div className="bg-white rounded-2xl p-6 border border-zinc-100 inline-block w-full sm:w-auto sm:max-w-sm">
+                      <p className="text-xs font-medium text-brand-orange tracking-wide mb-2">
+                        {item.theme}
+                      </p>
+                      <p className="font-display italic text-lg text-zinc-900 leading-snug">
+                        &ldquo;{item.verse}&rdquo;
+                      </p>
+                      <p className="text-xs text-zinc-400 mt-3">{item.ref}</p>
+                    </div>
+                  </div>
+
+                  <div className="hidden sm:block flex-1" />
+                </div>
+              </ScrollReveal>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 export default function Home() {
   return (
     <>
@@ -346,6 +433,7 @@ export default function Home() {
       <PhotoGridSection />
       <PillarsSection />
       <VisionSection />
+      <VisionTimelineSection />
       <CTASection />
     </>
   );
