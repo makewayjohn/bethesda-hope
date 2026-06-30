@@ -329,7 +329,7 @@ export default function WorshipPage() {
                 LOCATION
               </p>
               <h3 className="font-display text-2xl font-medium text-white">
-                22 Norios Aghmarti
+                27 Norios Aghmarti
               </h3>
               <p className="text-sm text-white/40 mt-2">Tbilisi, Georgia</p>
             </div>

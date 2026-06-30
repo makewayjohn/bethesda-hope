@@ -112,7 +112,7 @@ export default function Footer() {
             © 2026 Bethesda Hope Church. All rights reserved.
           </p>
           <p className="text-xs text-white/25">
-            22 Norios Aghmarti, Tbilisi, Georgia
+            27 Norios Aghmarti, Tbilisi, Georgia
           </p>
         </div>
       </div>

@@ -33,7 +33,7 @@ export default function NewHerePage() {
                 {
                   step: "01",
                   title: "Show up",
-                  desc: "Come as you are. No dress code, no pressure. We meet Sundays at 3 PM and Fridays at 7 PM at 22 Norios Aghmarti.",
+                  desc: "Come as you are. No dress code, no pressure. We meet Sundays at 3 PM and Fridays at 7 PM at 27 Norios Aghmarti.",
                 },
                 {
                   step: "02",
@@ -96,7 +96,7 @@ export default function NewHerePage() {
                 },
                 {
                   q: "Where exactly are you located?",
-                  a: "22 Norios Aghmarti, Tbilisi, Georgia. We're easy to find — message us on WhatsApp if you need directions.",
+                  a: "27 Norios Aghmarti, Tbilisi, Georgia. We're easy to find — message us on WhatsApp if you need directions.",
                 },
               ].map((item) => (
                 <div
@@ -137,7 +137,7 @@ export default function NewHerePage() {
               See you this Sunday.
             </h2>
             <p className="text-sm text-white/40 mt-3">
-              3:00 PM · 22 Norios Aghmarti, Tbilisi
+              3:00 PM · 27 Norios Aghmarti, Tbilisi
             </p>
             <div className="flex justify-center gap-4 mt-8">
               <Link

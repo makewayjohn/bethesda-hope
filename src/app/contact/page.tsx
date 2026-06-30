@@ -21,7 +21,7 @@ export default function ContactPage() {
             </div>
             <h3 className="text-lg font-medium text-zinc-900">Visit us</h3>
             <p className="text-sm text-zinc-500 mt-2 leading-relaxed">
-              22 Norios Aghmarti
+              27 Norios Aghmarti
               <br />
               Tbilisi, Georgia
             </p>
@@ -77,7 +77,7 @@ export default function ContactPage() {
               <p className="text-brand-teal text-lg mt-1">7:00 PM</p>
             </div>
           </div>
-          <p className="text-sm text-white/30 mt-8">22 Norios Aghmarti, Tbilisi, Georgia</p>
+          <p className="text-sm text-white/30 mt-8">27 Norios Aghmarti, Tbilisi, Georgia</p>
         </div>
       </section>
     </>

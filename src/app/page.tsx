@@ -270,7 +270,7 @@ function CTASection() {
               Ready to come home?
             </h2>
             <p className="text-sm text-white/40 mt-2">
-              22 Norios Aghmarti, Tbilisi, Georgia
+              27 Norios Aghmarti, Tbilisi, Georgia
             </p>
           </div>
           <div className="flex gap-3">
