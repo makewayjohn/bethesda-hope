@@ -75,10 +75,16 @@ export default function CampusHopePage() {
           </ScrollReveal>
           <ScrollReveal>
             <CampusMap />
-            <p className="text-xs text-zinc-400 text-center mt-3 mb-14">
-              Universities across Tbilisi where we go out weekly. Tap a pin to
-              see the campus.
-            </p>
+            <div className="flex items-center justify-center gap-5 mt-4 mb-14 text-xs text-zinc-400">
+              <span className="flex items-center gap-1.5">
+                <span className="w-2.5 h-2.5 rounded-full bg-red-600" />
+                Medical universities
+              </span>
+              <span className="flex items-center gap-1.5">
+                <span className="w-2.5 h-2.5 rounded-full bg-brand-orange" />
+                Bethesda Hope Church
+              </span>
+            </div>
           </ScrollReveal>
           <ScrollReveal stagger>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
