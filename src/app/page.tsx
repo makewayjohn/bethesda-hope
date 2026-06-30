@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import ScrollReveal from "@/components/ScrollReveal";
+import UrgentPrayerSection from "@/components/UrgentPrayerSection";
 
 function HeroSection() {
   return (
@@ -468,6 +469,7 @@ export default function Home() {
       <PillarsSection />
       <VisionSection />
       <VisionTimelineSection />
+      <UrgentPrayerSection />
       <CTASection />
     </>
   );
