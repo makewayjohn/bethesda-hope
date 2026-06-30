@@ -1,0 +1,117 @@
+import ScrollReveal from "@/components/ScrollReveal";
+import CampusHopeSignup from "@/components/CampusHopeSignup";
+
+export default function CampusHopePage() {
+  return (
+    <>
+      <section className="pt-32 pb-20 px-6 bg-zinc-50">
+        <div className="max-w-3xl mx-auto text-center">
+          <p className="text-xs tracking-[4px] text-zinc-400 mb-6">
+            CAMPUS HOPE
+          </p>
+          <h1 className="font-display text-4xl sm:text-5xl font-medium tracking-tight leading-tight text-zinc-900">
+            Bringing hope to the campus, one student at a time.
+          </h1>
+          <p className="text-lg text-zinc-500 leading-relaxed mt-6 max-w-xl mx-auto">
+            Once a week, we go out to the universities of Tbilisi — meeting
+            students, praying blessing over them, and loving our neighbors the
+            way Jesus taught us to.
+          </p>
+        </div>
+      </section>
+
+      {/* What it is */}
+      <section className="py-20 px-6">
+        <div className="max-w-3xl mx-auto">
+          <ScrollReveal>
+            <p className="text-xs tracking-[4px] text-zinc-400 mb-6">
+              WHAT IS CAMPUS HOPE
+            </p>
+            <div className="space-y-6 text-base text-zinc-600 leading-relaxed">
+              <p>
+                Campus Hope is our weekly outreach to the universities of
+                Tbilisi. We go out to the campuses, meet students where they
+                are, and offer a simple gift: a blessing prayer, freely given,
+                no strings attached.
+              </p>
+              <p>
+                Our goal is campus evangelization — to see the gospel reach
+                every student in this city. But more than a program, it&apos;s
+                an act of obedience to what Jesus called the greatest
+                commandment: to love our neighbor.
+              </p>
+              <p>
+                Our church is made up of students from many different
+                universities across Tbilisi. Through Campus Hope, we pray for
+                one another, bless each other, and help students in need —
+                wherever they are, whatever they&apos;re facing.
+              </p>
+            </div>
+          </ScrollReveal>
+        </div>
+      </section>
+
+      {/* How it works */}
+      <section className="bg-zinc-50 py-20 px-6">
+        <div className="max-w-4xl mx-auto">
+          <ScrollReveal>
+            <p className="text-xs tracking-[4px] text-zinc-400 mb-10 text-center">
+              HOW IT WORKS
+            </p>
+          </ScrollReveal>
+          <ScrollReveal stagger>
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+              {[
+                {
+                  step: "01",
+                  title: "Go out, weekly",
+                  desc: "Once a week, our team heads out to a university campus in Tbilisi.",
+                },
+                {
+                  step: "02",
+                  title: "Meet & bless",
+                  desc: "We meet students, hear their hearts, and pray a blessing over them — right there.",
+                },
+                {
+                  step: "03",
+                  title: "Walk alongside",
+                  desc: "When a student needs help — practical or spiritual — our community steps in.",
+                },
+              ].map((item) => (
+                <div
+                  key={item.step}
+                  className="animate-on-scroll bg-white rounded-2xl p-6 border border-zinc-100"
+                >
+                  <span className="text-3xl font-medium text-zinc-100">
+                    {item.step}
+                  </span>
+                  <h3 className="text-base font-medium text-zinc-900 mt-3">
+                    {item.title}
+                  </h3>
+                  <p className="text-sm text-zinc-500 mt-2 leading-relaxed">
+                    {item.desc}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </ScrollReveal>
+        </div>
+      </section>
+
+      {/* Verse */}
+      <section className="bg-brand-dark py-20 px-6">
+        <ScrollReveal>
+          <div className="max-w-3xl mx-auto text-center">
+            <p className="text-2xl sm:text-3xl font-medium text-white leading-snug font-serif italic">
+              &ldquo;Love your neighbor as yourself.&rdquo;
+            </p>
+            <p className="text-sm text-white/40 mt-4">Mark 12:31</p>
+          </div>
+        </ScrollReveal>
+      </section>
+
+      {/* Sign up */}
+      <CampusHopeSignup />
+    </>
+  );
+}
