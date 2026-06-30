@@ -5,7 +5,7 @@ import { useState } from "react";
 type Props = {
   year: string;
   verse: string;
-  ref: string;
+  verseRef: string;
   theme: string;
   highlights: string[];
   align: "left" | "right";
@@ -14,7 +14,7 @@ type Props = {
 export default function YearCard({
   year,
   verse,
-  ref,
+  verseRef,
   theme,
   highlights,
   align,
@@ -51,7 +51,7 @@ export default function YearCard({
       <p className="font-display italic text-lg text-zinc-900 leading-snug">
         &ldquo;{verse}&rdquo;
       </p>
-      <p className="text-xs text-zinc-400 mt-3">{ref}</p>
+      <p className="text-xs text-zinc-400 mt-3">{verseRef}</p>
 
       {hasHighlights && (
         <>

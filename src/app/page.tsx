@@ -421,7 +421,7 @@ function VisionTimelineSection() {
                     <YearCard
                       year={item.year}
                       verse={item.verse}
-                      ref={item.ref}
+                      verseRef={item.ref}
                       theme={item.theme}
                       highlights={item.highlights}
                       align={i % 2 === 0 ? "right" : "left"}
