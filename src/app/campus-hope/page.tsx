@@ -1,6 +1,7 @@
 import Image from "next/image";
 import ScrollReveal from "@/components/ScrollReveal";
 import CampusHopeSignup from "@/components/CampusHopeSignup";
+import CampusMap from "@/components/CampusMap";
 
 export default function CampusHopePage() {
   return (
@@ -71,6 +72,13 @@ export default function CampusHopePage() {
             <h2 className="font-display text-2xl sm:text-3xl font-medium text-zinc-900 tracking-tight text-center mb-14">
               How we serve the campus.
             </h2>
+          </ScrollReveal>
+          <ScrollReveal>
+            <CampusMap />
+            <p className="text-xs text-zinc-400 text-center mt-3 mb-14">
+              Universities across Tbilisi where we go out weekly. Tap a pin to
+              see the campus.
+            </p>
           </ScrollReveal>
           <ScrollReveal stagger>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
