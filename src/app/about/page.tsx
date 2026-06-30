@@ -260,6 +260,57 @@ export default function AboutPage() {
         </div>
       </section>
 
+      {/* Baptism */}
+      <section className="py-20 px-6 bg-zinc-950">
+        <div className="max-w-5xl mx-auto">
+          <p className="text-xs tracking-[4px] text-white/30 mb-3 text-center">
+            BAPTISM
+          </p>
+          <h2 className="font-display text-2xl sm:text-3xl font-medium text-white tracking-tight text-center mb-4">
+            New life in Christ.
+          </h2>
+          <p className="text-sm text-white/50 text-center max-w-xl mx-auto mb-12 leading-relaxed">
+            Baptism is not the end — it&apos;s the beginning. Each one a testimony
+            of grace, a declaration of faith, and a step into new life.
+          </p>
+
+          {/* Photos */}
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 sm:gap-3 mb-6">
+            {[
+              { src: "/images/baptism_1.jpg", alt: "Person emerging from baptism" },
+              { src: "/images/baptism_2.jpg", alt: "Baptism celebration group" },
+              { src: "/images/baptism_3.jpg", alt: "Baptism day celebration" },
+              { src: "/images/baptism_4.jpg", alt: "Pastor and candidate" },
+            ].map((p) => (
+              <div key={p.src} className="aspect-square relative rounded-xl overflow-hidden">
+                <Image src={p.src} alt={p.alt} fill className="object-cover hover:scale-105 transition-transform duration-300" />
+              </div>
+            ))}
+          </div>
+
+          {/* Videos */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+            {[
+              "/videos/baptism_v1.mp4",
+              "/videos/baptism_v2.mp4",
+              "/videos/baptism_v3.mp4",
+              "/videos/baptism_v4.mp4",
+              "/videos/baptism_v5.mp4",
+              "/videos/baptism_v6.mp4",
+            ].map((v, i) => (
+              <video
+                key={v}
+                src={v}
+                controls
+                playsInline
+                className="w-full rounded-xl bg-zinc-900"
+                aria-label={`Baptism video ${i + 1}`}
+              />
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* CTA */}
       <section className="py-20 px-6 text-center">
         <h2 className="text-3xl font-medium text-zinc-900 tracking-tight">
