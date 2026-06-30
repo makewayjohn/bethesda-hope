@@ -101,7 +101,7 @@ function ServiceTimesSection() {
           <p className="text-xs tracking-[4px] text-zinc-400 mb-3 text-center sm:text-left">
             JOIN US
           </p>
-          <h2 className="font-display text-2xl sm:text-3xl font-medium text-zinc-900 tracking-tight text-center sm:text-left mb-8 sm:mb-10">
+          <h2 className="font-display text-2xl sm:text-3xl font-medium text-zinc-900 tracking-tight text-center sm:text-left mb-5 sm:mb-6">
             When we gather.
           </h2>
         </ScrollReveal>
