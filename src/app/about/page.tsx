@@ -23,7 +23,7 @@ export default function AboutPage() {
         <div className="max-w-5xl mx-auto -mt-4">
           <div className="aspect-video relative rounded-2xl overflow-hidden">
             <Image
-              src="/images/about_group.jpeg"
+              src="/images/campus_group.jpeg"
               alt="Bethesda Hope Church family"
               fill
               className="object-cover"
