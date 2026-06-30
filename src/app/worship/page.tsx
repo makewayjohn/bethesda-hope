@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import ScrollReveal from "@/components/ScrollReveal";
 
 type Gathering = {
@@ -150,16 +151,94 @@ function GatheringCard({
 export default function WorshipPage() {
   return (
     <>
-      <section className="pt-32 pb-20 px-6 bg-zinc-50">
-        <div className="max-w-3xl mx-auto text-center">
-          <p className="text-xs tracking-[4px] text-zinc-400 mb-6">WORSHIP</p>
-          <h1 className="font-display text-4xl sm:text-5xl font-medium tracking-tight leading-tight text-zinc-900">
+      <section className="relative pt-36 pb-20 px-6 flex items-end min-h-[60vh]">
+        <Image
+          src="/images/group_worship.jpeg"
+          alt="Bethesda Hope Church worship gathering"
+          fill
+          priority
+          className="object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/45 to-black/10" />
+
+        <div className="relative max-w-3xl mx-auto text-center">
+          <p className="text-xs tracking-[4px] text-brand-orange mb-6">WORSHIP</p>
+          <h1 className="font-display text-4xl sm:text-5xl font-medium tracking-tight leading-tight text-white">
             Worship is a celebration.
           </h1>
-          <p className="text-lg text-zinc-500 leading-relaxed mt-6 max-w-xl mx-auto">
+          <p className="text-lg text-white/70 leading-relaxed mt-6 max-w-xl mx-auto">
             A celebration of the salvation Jesus gave us. A conversation with
             God. A place to be recharged, renewed, and filled with joy.
           </p>
+        </div>
+      </section>
+
+      {/* Weekly rhythm at a glance */}
+      <section className="py-14 px-6 bg-white border-b border-zinc-100">
+        <div className="max-w-4xl mx-auto">
+          <ScrollReveal>
+            <p className="text-xs tracking-[4px] text-zinc-400 mb-6 text-center">
+              YOUR WEEK WITH US
+            </p>
+            <div className="grid grid-cols-7 gap-1.5 sm:gap-3">
+              {[
+                { d: "MON", sunday: false, friday: false },
+                { d: "TUE", sunday: false, friday: false },
+                { d: "WED", sunday: false, friday: false },
+                { d: "THU", sunday: false, friday: false },
+                { d: "FRI", sunday: false, friday: true },
+                { d: "SAT", sunday: false, friday: false },
+                { d: "SUN", sunday: true, friday: false },
+              ].map((day) => (
+                <div
+                  key={day.d}
+                  className={`rounded-xl sm:rounded-2xl p-2 sm:p-4 flex flex-col items-center gap-1.5 sm:gap-2 ${
+                    day.sunday
+                      ? "bg-brand-orange/10"
+                      : day.friday
+                      ? "bg-brand-teal/10"
+                      : "bg-zinc-50"
+                  }`}
+                >
+                  <span
+                    className={`text-[10px] sm:text-xs font-medium tracking-wide ${
+                      day.sunday
+                        ? "text-brand-orange"
+                        : day.friday
+                        ? "text-brand-teal"
+                        : "text-zinc-400"
+                    }`}
+                  >
+                    {day.d}
+                  </span>
+                  <span className="w-1.5 h-1.5 rounded-full bg-brand-orange" title="Morning devotion 10AM" />
+                  <span className="w-1.5 h-1.5 rounded-full bg-brand-teal" title="Evening prayer 8PM" />
+                  {day.sunday && (
+                    <span className="hidden sm:block text-[10px] text-brand-orange font-medium text-center leading-tight mt-1">
+                      Worship
+                      <br />3PM
+                    </span>
+                  )}
+                  {day.friday && (
+                    <span className="hidden sm:block text-[10px] text-brand-teal font-medium text-center leading-tight mt-1">
+                      Service
+                      <br />7PM
+                    </span>
+                  )}
+                </div>
+              ))}
+            </div>
+            <div className="flex items-center justify-center gap-6 mt-6 text-xs text-zinc-400">
+              <span className="flex items-center gap-1.5">
+                <span className="w-2 h-2 rounded-full bg-brand-orange" />
+                Word
+              </span>
+              <span className="flex items-center gap-1.5">
+                <span className="w-2 h-2 rounded-full bg-brand-teal" />
+                Spirit
+              </span>
+            </div>
+          </ScrollReveal>
         </div>
       </section>
 
@@ -221,79 +300,6 @@ export default function WorshipPage() {
                   <GatheringCard key={g.id} item={g} accent="teal" />
                 ))}
               </div>
-            </div>
-          </ScrollReveal>
-        </div>
-      </section>
-
-      {/* At a glance summary */}
-      <section className="bg-zinc-50 py-16 px-6">
-        <div className="max-w-4xl mx-auto">
-          <ScrollReveal>
-            <p className="text-xs tracking-[4px] text-zinc-400 mb-8">
-              AT A GLANCE
-            </p>
-            <div className="overflow-x-auto">
-              <table className="w-full text-left text-sm">
-                <thead>
-                  <tr className="border-b border-zinc-200">
-                    <th className="pb-3 text-xs tracking-[2px] text-zinc-400 font-medium">
-                      WHEN
-                    </th>
-                    <th className="pb-3 text-xs tracking-[2px] text-zinc-400 font-medium">
-                      WHAT
-                    </th>
-                    <th className="pb-3 text-xs tracking-[2px] text-zinc-400 font-medium">
-                      TIME
-                    </th>
-                    <th className="pb-3 text-xs tracking-[2px] text-zinc-400 font-medium">
-                      FOCUS
-                    </th>
-                  </tr>
-                </thead>
-                <tbody className="divide-y divide-zinc-100">
-                  <tr>
-                    <td className="py-4 text-zinc-900 font-medium">Every day</td>
-                    <td className="py-4 text-zinc-600">Morning devotion</td>
-                    <td className="py-4 text-zinc-900 font-medium">10:00 AM</td>
-                    <td className="py-4">
-                      <span className="text-xs bg-brand-orange/8 text-brand-orange px-2.5 py-0.5 rounded-full">
-                        Word
-                      </span>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td className="py-4 text-zinc-900 font-medium">Every day</td>
-                    <td className="py-4 text-zinc-600">Evening prayer</td>
-                    <td className="py-4 text-zinc-900 font-medium">8:00 PM</td>
-                    <td className="py-4">
-                      <span className="text-xs bg-brand-teal/8 text-brand-teal px-2.5 py-0.5 rounded-full">
-                        Spirit
-                      </span>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td className="py-4 text-zinc-900 font-medium">Sunday</td>
-                    <td className="py-4 text-zinc-600">Sunday worship</td>
-                    <td className="py-4 text-zinc-900 font-medium">3:00 PM</td>
-                    <td className="py-4">
-                      <span className="text-xs bg-brand-orange/8 text-brand-orange px-2.5 py-0.5 rounded-full">
-                        Word
-                      </span>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td className="py-4 text-zinc-900 font-medium">Friday</td>
-                    <td className="py-4 text-zinc-600">Friday service</td>
-                    <td className="py-4 text-zinc-900 font-medium">7:00 PM</td>
-                    <td className="py-4">
-                      <span className="text-xs bg-brand-teal/8 text-brand-teal px-2.5 py-0.5 rounded-full">
-                        Spirit
-                      </span>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
             </div>
           </ScrollReveal>
         </div>
